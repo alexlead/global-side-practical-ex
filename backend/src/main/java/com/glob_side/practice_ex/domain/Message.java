@@ -30,7 +30,7 @@ public class Message implements MessageInterface {
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
-    @Column(nullable = false, length = 150)
+    @Column(nullable = false, length = 40)
     private String title;
 
     @Column(nullable = false, columnDefinition = "TEXT")
