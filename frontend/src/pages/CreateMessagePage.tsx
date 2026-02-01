@@ -67,7 +67,6 @@ const CreateMessagePage: React.FunctionComponent = () => {
                                 as="textarea"
                                 name="content"
                                 rows={5}
-                                maxLength={1000}
                                 className={`form-control ${errors.content && touched.content ? 'is-invalid' : ''}`}
                                 placeholder="Enter message..."
                             />
