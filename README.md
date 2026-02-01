@@ -1,57 +1,74 @@
-# A simple inbox application
+# Simple Inbox Application
 
-# Task Description
+# Overview
 
-Build a simple inbox application where users can create, view, and delete messages. The frontend should be in React, and the backend in Java.
-For this exercise, there are no message recipients: all messages are visible to everyone, and each user can see and manage all messages. When a new message is created, it will appear in the list and that’s it.
+This project is a simple inbox application developed as a test assignment.
+It allows users to create, view, and delete messages. There are no message recipients — all messages are visible to all users, and everyone can manage the shared inbox.
 
+When a new message is created, it immediately appears in the message list.
 
-## Technologies
+## Features
+
+- Shared inbox (no user-specific messages)
+- Full Docker-based setup with one-command startup
+
+## Technology Stack
+
+### Backend
 
 - Java Spring Boot
-- React
-- Typescript
 - PostgreSQL
+- JPA / Hibernate
+- Clean Architecture & Domain-Driven Design (DDD)
+
+### Frontend
+
+- React
+- TypeScript
+- Axios
+- Formik (form handling and validation)
+- Bootstrap (UI styling)
+
+### Infrastructure
+
 - Docker
+- Docker Compose
+- NGINX
 
-## Frameworks
+## Installation & Running the Application
 
-- Bootstrap
-- Formik
+The entire application is fully containerized and can be started with a single command.
 
-## Installation
+### Build and Run
 
-Build the app with following command 
 ```
 docker-compose up --build
 ```
-or
+Alternatively:
 ```
 docker-compose build --no-cache
 docker-compose up -d
 ```
 
+### Accessing the Application
 
+Open the application in your browser at:
+```
+http://localhost
+```
 
-## Uninstallation
+### Stopping the Application
 
-Uninstall the app with the command 
+To stop and remove all containers:
 ```
 docker-compose down
 ```
 
-## Run App
+## Configuration Notes
 
-Below is a command for running the app 
-```
-docker-compose up
-```
+This is a test project, so environment (`.env`) files are intentionally not used to avoid additional setup steps.
+All configuration values are defined directly in the `docker-compose.yml`.
 
-## Work with the app through a Browser
-
-The URL for local testing is:
-```
-http://localhost
-```
+In a real production environment, sensitive data and configuration values would be moved to environment variables.
 
 ![App screenshot](screenshot.png)
