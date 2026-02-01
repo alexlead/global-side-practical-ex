@@ -2,10 +2,7 @@ import React from 'react';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 
 
-interface ILayoutProps {
-}
-
-const Layout: React.FunctionComponent<ILayoutProps> = () => {
+const Layout: React.FunctionComponent = () => {
     return (
         <div className="d-flex flex-column min-vh-100">
 

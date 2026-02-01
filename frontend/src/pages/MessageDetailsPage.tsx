@@ -4,10 +4,7 @@ import { messageApi } from '../api/apiClient';
 import type { Message } from '../types/message';
 
 
-interface IMessageDetailsPageProps {
-}
-
-const MessageDetailsPage: React.FunctionComponent<IMessageDetailsPageProps> = () => {
+const MessageDetailsPage: React.FunctionComponent = () => {
 
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();

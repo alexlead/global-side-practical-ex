@@ -26,6 +26,13 @@ Build the app with following command
 ```
 docker-compose up --build
 ```
+or
+```
+docker-compose build --no-cache
+docker-compose up -d
+```
+
+
 
 ## Uninstallation
 
@@ -47,3 +54,5 @@ The URL for local testing is:
 ```
 http://localhost
 ```
+
+![App screenshot](screenshot.png)

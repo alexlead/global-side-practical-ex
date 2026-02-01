@@ -9,6 +9,9 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
+/**
+ * Domain class for messages
+ */
 @Entity
 @Table(name = "message")
 @EntityListeners(AuditingEntityListener.class)

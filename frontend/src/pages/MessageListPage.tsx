@@ -4,10 +4,8 @@ import { messageApi } from '../api/apiClient';
 import MessageCard from '../components/MessageCard';
 import type { Message } from '../types/message';
 
-interface IMessageListPageProps {
-}
 
-const MessageListPage: React.FunctionComponent<IMessageListPageProps> = () => {
+const MessageListPage: React.FunctionComponent = () => {
     const [messages, setMessages] = useState<Message[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);

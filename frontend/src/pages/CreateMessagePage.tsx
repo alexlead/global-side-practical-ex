@@ -4,8 +4,7 @@ import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 import { messageApi } from '../api/apiClient';
 import type { CreateMessageInput } from '../types/message';
-interface ICreateMessagePageProps {
-}
+
 
 
 const MessageSchema = Yup.object().shape({
@@ -18,7 +17,7 @@ const MessageSchema = Yup.object().shape({
         .required('Content is required'),
 });
 
-const CreateMessagePage: React.FunctionComponent<ICreateMessagePageProps> = () => {
+const CreateMessagePage: React.FunctionComponent = () => {
     const navigate = useNavigate();
 
     const initialValues: CreateMessageInput = {
