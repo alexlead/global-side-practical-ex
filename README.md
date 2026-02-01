@@ -16,7 +16,6 @@ For this exercise, there are no message recipients: all messages are visible to 
 
 ## Frameworks
 
-- Swagger
 - Bootstrap
 - Formik
 
