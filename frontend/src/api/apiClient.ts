@@ -3,9 +3,12 @@ import type { CreateMessageInput, Message } from "../types/message";
 
 
 const apiClient = axios.create({
-    baseURL: '/api', // Относительный путь! 
+    baseURL: '/api',
     headers: {
         'Content-Type': 'application/json',
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache',
+        'Expires': '0',
     }
 });
 

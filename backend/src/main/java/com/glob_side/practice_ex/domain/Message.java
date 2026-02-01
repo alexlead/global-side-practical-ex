@@ -24,7 +24,7 @@ public class Message implements MessageInterface {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Integer id;
 
     @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)

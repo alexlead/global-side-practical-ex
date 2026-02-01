@@ -4,7 +4,6 @@ import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 import { messageApi } from '../api/apiClient';
 import type { CreateMessageInput } from '../types/message';
-import { max } from './../../node_modules/rxjs/dist/esm5/internal/operators/max';
 interface ICreateMessagePageProps {
 }
 
@@ -12,10 +11,10 @@ interface ICreateMessagePageProps {
 const MessageSchema = Yup.object().shape({
     title: Yup.string()
         .min(3, 'Title too short')
-        .max(150, 'Title too long')
+        .max(40, 'Title too long')
         .required('Title is required'),
     content: Yup.string()
-        .min(10, 'Content too short')
+        .min(3, 'Content too short')
         .required('Content is required'),
 });
 
@@ -28,7 +27,16 @@ const CreateMessagePage: React.FunctionComponent<ICreateMessagePageProps> = () =
     };
 
     const handleSubmit = async (values: CreateMessageInput, { setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }) => {
-
+        try {
+            await messageApi.create(values);
+            alert('The message has been created successfully');
+            navigate('/');
+        } catch (error) {
+            console.error('Saving error:', error);
+            alert('There was an error creating the message.');
+        } finally {
+            setSubmitting(false);
+        }
     }
 
     return (
@@ -43,11 +51,11 @@ const CreateMessagePage: React.FunctionComponent<ICreateMessagePageProps> = () =
                 {({ isSubmitting, errors, touched }) => (
                     <Form>
                         <div className="mb-3">
-                            <label htmlFor="title" className="form-label">Title</label>
+                            <label htmlFor="title" className="form-label">Subject</label>
                             <Field
                                 name="title"
                                 type="text"
-                                maxLength={150}
+                                maxLength={40}
                                 className={`form-control ${errors.title && touched.title ? 'is-invalid' : ''}`}
                                 placeholder="Enter title..."
                             />
@@ -55,7 +63,7 @@ const CreateMessagePage: React.FunctionComponent<ICreateMessagePageProps> = () =
                         </div>
 
                         <div className="mb-3">
-                            <label htmlFor="content" className="form-label">Message</label>
+                            <label htmlFor="content" className="form-label">Text</label>
                             <Field
                                 as="textarea"
                                 name="content"

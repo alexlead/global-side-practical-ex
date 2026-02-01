@@ -23,7 +23,7 @@ public class MessageService {
     }
 
     public List<Message> getAllMessages() {
-        return null;
+        return repository.findAll();
     }
     public Optional<Message> getMessageById (Integer id ) {
         return repository.findById(id);

@@ -29,7 +29,7 @@ const Layout: React.FunctionComponent<ILayoutProps> = () => {
             </main>
             <footer className="bg-light border-top py-3 mt-auto">
                 <div className="container text-center text-muted">
-                    <span>&copy; {new Date().getFullYear()} Demo Aufgaben</span>
+                    <span>&copy; {new Date().getFullYear()} Demo Aufgabe</span>
                 </div>
             </footer>
 
